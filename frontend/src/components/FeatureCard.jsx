@@ -1,0 +1,6 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+export default function FeatureCard({icon:Icon,title,description,index=0}) {
+  return <motion.article initial={{opacity:0,y:22}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:'-40px'}} transition={{duration:.55,delay:index*.07,ease:'easeOut'}} whileHover={{y:-5}} className="group rounded-2xl border border-[#DCE8F5] bg-white p-6 shadow-[0_4px_20px_-2px_rgba(22,119,255,.06)] transition-[border-color,box-shadow] duration-300 hover:border-[#1677FF]/40 hover:shadow-[0_16px_38px_-8px_rgba(22,119,255,.18)]"><div className="mb-5 flex items-center justify-between"><span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EAF4FF] text-[#1677FF] transition-transform duration-300 group-hover:scale-105"><Icon size={24} strokeWidth={2}/></span><span className="text-xs font-bold tracking-widest text-[#1677FF]">0{index+1}</span></div><h3 className="text-lg font-bold leading-snug text-[#0F1F3D]">{title}</h3><p className="mt-2 text-sm leading-relaxed text-[#64748B]">{description}</p><div className="mt-6 h-0.5 w-10 rounded-full bg-[#1677FF]/20 transition-all duration-300 group-hover:w-16 group-hover:bg-[#1677FF]" aria-hidden="true"/></motion.article>;
+}
